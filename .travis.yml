@@ -10,7 +10,7 @@ before_install:
 script:
     - ./scripts/cibuild.sh
 after_success:
-    - ./scripts/deploy-staging.sh
+    - ./scripts/deploy.sh
 cache: bundler # Add caching using bundler
 
 branches:
