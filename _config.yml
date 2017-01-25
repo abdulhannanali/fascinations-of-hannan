@@ -110,7 +110,6 @@ permalink:    pretty
 paginate:     4
 sass:
   style: compressed
-env: development
 gems:
   - jekyll-paginate
   - jekyll-sitemap
