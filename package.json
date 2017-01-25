@@ -1,0 +1,26 @@
+{
+  "name": "hannan-fascinations",
+  "version": "0.0.1",
+  "description": "Hannan's fascinations blog deployed on Firebase ",
+  "main": "index.js",
+  "dependencies": {
+    "surge": "^0.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulhannanali/fascinations-of-hanann.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Hannan Ali (abdulhannanali@outlook.com)",
+  "license": "Copyright Hannan Ali 2017",
+  "bugs": {
+    "url": "https://github.com/abdulhannanali/fascinations-of-hanann/issues"
+  },
+  "homepage": "https://github.com/abdulhannanali/fascinations-of-hanann#readme"
+}
