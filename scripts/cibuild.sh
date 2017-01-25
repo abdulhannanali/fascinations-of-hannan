@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-jekyll build
+bundle exec jekyll build
