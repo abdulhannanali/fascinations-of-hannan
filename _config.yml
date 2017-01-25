@@ -110,9 +110,11 @@ permalink:    pretty
 paginate:     4
 sass:
   style: compressed
+env: development
 gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+  - octopress-minify-html
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
