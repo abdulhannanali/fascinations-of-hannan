@@ -1,6 +1,6 @@
 ---
 title: Setting up Travis CI for Jekyll to build and deploy
-summary: My first TravisCI file
+summary: I write about my experience with TravisCI and my first TravisCI file
 layout: post
 category: [travis, ci, technology]
 ---
