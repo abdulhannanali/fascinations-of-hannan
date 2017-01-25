@@ -3,6 +3,8 @@ layout: page
 title: About Hannan
 permalink: /about/
 tags: about
+summary: About Hannan's Fascinations and Credits
+description: About Hannan's Fascinations and Credits
 ---
 <!--My pic-->
 <img src="/images/hannan.jpg" width="240px" height="240px" alt="Hanna's Display Picture" />
@@ -12,11 +14,13 @@ Hey There, Hannan here, I made this blog,to write about stuff I am excited about
 
 For me, it's not just about writing good content, but influencing people to be the change, and improve their lives. I don't know everything, but whatever I know, through this blog, I will be able to help you with that.
 
-I like having a personal blog and, in an ideal world, I would have to write only here, but that's not the case always, so I also write on **[Medium](https://medium.com/@abdulhannanali)** too to reach more people. I have future plans to start a Youtube channel, but that's something in the far future, as I am working on a lot of things at one time right now.
+I like having a personal blog and, in an ideal world, I would have to write only here, but that's not the case always, so I also write on **[Medium](https://medium.com/@abdulhannanali)** too to reach more people. I have future plans to start a Youtube channel, but that's something in the far future, as I am working on a lot of things at a time right now.
 
 You can check out my Personal Portfolio at [hannanali.tech](https://hannanali.tech).
 
-Say Hi to me on Twitter [@computistic](https://twitter.com/computistic) (just sayin'), stalk me on [Facebook](https://facebook.com/abdulhannanali) and to keep updated with things I am doing regarding software, you can checkout my [Github portfolio](https://github.com/abdulhannanali)
+Say Hi to me on Twitter [@computistic](https://twitter.com/computistic) (just sayin'), stalk me on [Facebook](https://facebook.com/abdulhannanali) and to keep updated with things I am doing regarding software, you can checkout my [Github portfolio](https://github.com/abdulhannanali). 
+
+Here's my email by the way [hi@hannanali.tech](mailto:hi@hannanali.tech)
 
 ### Credits and behind the scenes
 This blog is standing on the shoulder of giants, countless people have worked to make this Medium possible and I would like to extend a big **THANK YOU** :bow: :clap: :raised_hands: to everyone involved in this effort. You all are my [PICs](www.internetslang.com/PIC-meaning-definition.asp)
