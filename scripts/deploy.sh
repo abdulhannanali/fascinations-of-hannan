@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ev
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     echo "Skipping deploy; just doing a build."
