@@ -38,6 +38,10 @@ ghpages.publish(path.join(__dirname, '../_site'), options, function (error) {
     }
 })
 
+/**
+ * generateGithubUrl
+ * generates github url along with a token
+ */
 function generateGithubUrl (repoUrl, github_token) {
-    return repoUrl.replace('https://', `https://${github_token}:x-oauth-basic@`)
+    return repoUrl.replace('https://', 'https://' + github_token + ':x-oauth-basic@')
 }
