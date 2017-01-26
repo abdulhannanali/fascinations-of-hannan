@@ -3,6 +3,7 @@ title: Setting up Travis CI for Jekyll to build and deploy
 summary: I write about my experience with TravisCI and my first TravisCI file
 layout: post
 category: [travis, ci, technology]
+image: http://i.imgur.com/hU0gtSM.png
 ---
 [![TravisCI Mascot](/images/travis-mascot.png)](https://travis-ci.org)
 
