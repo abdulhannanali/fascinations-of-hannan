@@ -34,7 +34,6 @@ Life was never so fun.</p>
     <span class="pi">-</span> <span class="s">./scripts/cibuild.sh</span>
 <span class="s">after_success</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">./scripts/deploy.sh</span>
-<span class="s">cache</span><span class="pi">:</span> <span class="s">bundler</span> <span class="c1"># Add caching using bundler</span>
 
 <span class="s">branches</span><span class="pi">:</span>
     <span class="s">except</span><span class="pi">:</span>

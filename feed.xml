@@ -29,7 +29,6 @@ Life was never so fun.&lt;/p&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./scripts/cibuild.sh&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;after_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./scripts/deploy.sh&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Add caching using bundler&lt;/span&gt;
 
 &lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
