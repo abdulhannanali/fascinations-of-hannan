@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://localhost:4000</link>
+    <link>https://fascinations.hannanali.tech</link>
     <description>
       Blog where Hannan shares his thoughts about things he find fascinating. 
     </description>
@@ -10,7 +10,7 @@
         
             <item>
                 <title>Setting up Travis CI for Jekyll to build and deploy</title>
-                <link>http://localhost:4000/travis/ci/technology/2017/01/26/travis-ci-index/</link>
+                <link>https://fascinations.hannanali.tech/travis/ci/technology/2017/01/26/travis-ci-index/</link>
                 <content:encoded>
                     <![CDATA[
                     <p><a href="https://travis-ci.org"><img src="/images/travis-mascot.png" alt="TravisCI Mascot" /></a></p>

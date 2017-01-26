@@ -3,8 +3,8 @@
   <channel>
     <title>Hannan's fascinations</title>
     <description>Blog where Hannan shares his thoughts about things he find fascinating. </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://fascinations.hannanali.tech/</link>
+    <atom:link href="https://fascinations.hannanali.tech/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Setting up Travis CI for Jekyll to build and deploy</title>
@@ -42,8 +42,8 @@ in these scripts. You can checkout all the bash scripts in the &lt;a href=&quot;
 directory of this blog’s Github Repository.&lt;/p&gt;
 </description>
         <pubDate>Thu, 26 Jan 2017 00:00:00 +0500</pubDate>
-        <link>http://localhost:4000/travis/ci/technology/2017/01/26/travis-ci-index/</link>
-        <guid isPermaLink="true">http://localhost:4000/travis/ci/technology/2017/01/26/travis-ci-index/</guid>
+        <link>https://fascinations.hannanali.tech/travis/ci/technology/2017/01/26/travis-ci-index/</link>
+        <guid isPermaLink="true">https://fascinations.hannanali.tech/travis/ci/technology/2017/01/26/travis-ci-index/</guid>
       </item>
     
   </channel>
