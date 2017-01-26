@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hannan's fascinations</title>
+    <description>Blog where Hannan shares his thoughts about things he find fascinating. </description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Setting up Travis CI for Jekyll to build and deploy</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;&lt;img src=&quot;/images/travis-mascot.png&quot; alt=&quot;TravisCI Mascot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I just set up first ever Continuous Integration Build Process using &lt;a href=&quot;https://travis-ci.org&quot;&gt;TravisCI&lt;/a&gt;,
+TravisCI, is pretty cool, super simple, and a joy to use. This build process was setup for this very blog,
+in order to save me hassle of rebuilding the whole blog manually and then deploying it manually too.
+Life was never so fun.&lt;/p&gt;
+
+&lt;h3 id=&quot;heres-my-build-file-though&quot;&gt;Here’s my build file though&lt;/h3&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.3.3&lt;/span&gt;
+ &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.2&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bash ./scripts/nvm.sh&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm install -g surge&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm install -g firebase-tools&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./scripts/cibuild.sh&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;after_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./scripts/deploy.sh&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Add caching using bundler&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gh-pages&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You might have noticed paths to bash scripts, majority of what TravisCI does for this blog is located 
+in these scripts. You can checkout all the bash scripts in the &lt;a href=&quot;https://github.com/abdulhannanali/fascinations-of-hannan/tree/travis-ci-post/scripts&quot;&gt;scripts/&lt;/a&gt;
+directory of this blog’s Github Repository.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Jan 2017 00:00:00 +0500</pubDate>
+        <link>http://localhost:4000/travis/ci/technology/2017/01/26/travis-ci-index/</link>
+        <guid isPermaLink="true">http://localhost:4000/travis/ci/technology/2017/01/26/travis-ci-index/</guid>
+      </item>
+    
+  </channel>
+</rss>
