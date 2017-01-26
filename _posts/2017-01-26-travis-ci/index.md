@@ -27,7 +27,6 @@ script:
     - ./scripts/cibuild.sh
 after_success:
     - ./scripts/deploy.sh
-cache: bundler # Add caching using bundler
 
 branches:
     except:
