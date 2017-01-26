@@ -1,8 +1,14 @@
+/**
+ * deploy-ghpages.js
+ * Uses awesome gh-pages module to deploy to Github pages
+ * AWESOME!
+ */
+
 const ghpages = require('gh-pages')
 const path = require('path')
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '3e647f716ec932ec969cebee40f0d16360dfcc58'
-const REPO_URL = 'https://github.com/abdulhannanali/fascinations-of-hannan/'
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const REPO_URL = 'https://github.com/abdulhannanali/fascinations-of-hannan.git'
 
 const githubUrl = generateGithubUrl(REPO_URL, GITHUB_TOKEN)
 const options = {
@@ -21,9 +27,7 @@ const options = {
     }
 }
 
-console.log('Cleaning the GhPages Cache, going to do this everytime')
 ghpages.clean()
-
 ghpages.publish(path.join(__dirname, '../_site'), options, function (error) {
     if (error) {
         console.error('Error occured while deploying to ghpages')
@@ -34,6 +38,10 @@ ghpages.publish(path.join(__dirname, '../_site'), options, function (error) {
     }
 })
 
+/**
+ * generateGithubUrl
+ * generates github url along with a token
+ */
 function generateGithubUrl (repoUrl, github_token) {
-    return repoUrl.replace('https://', `https://${github_token}@`)
+    return repoUrl.replace('https://', 'https://' + github_token + ':x-oauth-basic@')
 }

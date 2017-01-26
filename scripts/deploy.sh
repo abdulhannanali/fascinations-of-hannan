@@ -9,6 +9,7 @@ fi
 # Deployment to firebase for master branch
 if [ "$TRAVIS_BRANCH" == "master" ]; then
     echo "Deploying to firebase in case of master too"
+    node ./scripts/deploy-ghpages.js
     firebase deploy --token "$FIREBASE_TOKEN"
 fi
 
