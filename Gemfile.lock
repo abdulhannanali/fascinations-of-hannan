@@ -219,6 +219,3 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   octopress-minify-html
-
-BUNDLED WITH
-   1.14.3
