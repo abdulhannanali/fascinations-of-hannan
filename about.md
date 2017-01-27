@@ -7,7 +7,7 @@ summary: About Hannan's Fascinations and Credits
 description: About Hannan's Fascinations and Credits
 ---
 <!--My pic-->
-<img src="/images/hannan.jpg" width="240px" height="240px" alt="Hanna's Display Picture" />
+<a href="/images/hannan.jpg" title="Display picture"><img src="/images/hannan.jpg" width="240px" height="240px" alt="Hannan's Display Picture" title="Hannan's Display Picture"/></a>
 
 <!--Write about content here-->
 Hey There, Hannan here, I made this blog,to write about stuff I am excited about, I am angry about and also about the things I want a change about. This blog is going be a way to open up about ideas I have and discuss issues that need to be addressed.

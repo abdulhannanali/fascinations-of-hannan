@@ -6,6 +6,7 @@ category: [travis, ci, technology]
 image: http://i.imgur.com/hU0gtSM.png
 ---
 [![TravisCI Mascot](/images/travis-mascot.png)](https://travis-ci.org)
+{: .center}
 
 I just set up first ever Continuous Integration Build Process using [TravisCI](https://travis-ci.org),
 TravisCI, is pretty cool, super simple, and a joy to use. This build process was setup for this very blog,
@@ -18,7 +19,6 @@ language: ruby
 rvm:
  - 2.3.3
  - 2.2
-node_js: 6
 before_install:
     - bash ./scripts/nvm.sh
     - npm install -g surge

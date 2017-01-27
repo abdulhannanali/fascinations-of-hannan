@@ -25,6 +25,7 @@ ajaxify_contact_form: true
 enable_mathjax: false
 extended_fonts: false
 enable_anchorjs: false
+enable_lightbox: true
 
 # Facebook Page integration
 # (for instant articles and other stuff)
