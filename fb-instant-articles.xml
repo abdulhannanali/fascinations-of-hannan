@@ -13,7 +13,7 @@
                 <link>https://fascinations.hannanali.tech/travis/ci/technology/2017/01/26/travis-ci-index/</link>
                 <content:encoded>
                     <![CDATA[
-                    <p><a href="https://travis-ci.org"><img src="/images/travis-mascot.png" alt="TravisCI Mascot" /></a></p>
+                    <p class="center"><a href="https://travis-ci.org"><img src="/images/travis-mascot.png" alt="TravisCI Mascot" /></a></p>
 
 <p>I just set up first ever Continuous Integration Build Process using <a href="https://travis-ci.org">TravisCI</a>,
 TravisCI, is pretty cool, super simple, and a joy to use. This build process was setup for this very blog,
@@ -25,7 +25,6 @@ Life was never so fun.</p>
 <span class="s">rvm</span><span class="pi">:</span>
  <span class="pi">-</span> <span class="s">2.3.3</span>
  <span class="pi">-</span> <span class="s">2.2</span>
-<span class="s">node_js</span><span class="pi">:</span> <span class="s">6</span>
 <span class="s">before_install</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">bash ./scripts/nvm.sh</span>
     <span class="pi">-</span> <span class="s">npm install -g surge</span>

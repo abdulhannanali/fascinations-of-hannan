@@ -8,7 +8,7 @@
     
       <item>
         <title>Setting up Travis CI for Jekyll to build and deploy</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;&lt;img src=&quot;/images/travis-mascot.png&quot; alt=&quot;TravisCI Mascot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;&lt;img src=&quot;/images/travis-mascot.png&quot; alt=&quot;TravisCI Mascot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I just set up first ever Continuous Integration Build Process using &lt;a href=&quot;https://travis-ci.org&quot;&gt;TravisCI&lt;/a&gt;,
 TravisCI, is pretty cool, super simple, and a joy to use. This build process was setup for this very blog,
@@ -20,7 +20,6 @@ Life was never so fun.&lt;/p&gt;
 &lt;span class=&quot;s&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.3.3&lt;/span&gt;
  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.2&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;6&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bash ./scripts/nvm.sh&lt;/span&gt;
     &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm install -g surge&lt;/span&gt;
