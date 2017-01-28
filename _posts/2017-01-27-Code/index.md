@@ -6,7 +6,7 @@ summary:
     and be ready for the exciting future.
 layout: post
 category: [programming, people, education, CS]
-image: /images/coding.jpg
+image: https://i.imgur.com/1j4A5Zn.png
 ---
 
 <a href="/images/coding.jpg" title="">
