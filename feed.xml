@@ -7,6 +7,75 @@
     <atom:link href="https://fascinations.hannanali.tech/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Improving lives through CS and coding</title>
+        <description>&lt;p class=&quot;lightbox center&quot;&gt;&lt;a href=&quot;/images/coding.jpg&quot; title=&quot;&quot;&gt;
+    &lt;img src=&quot;/images/coding.jpg&quot; alt=&quot;Coding might be the closest thing we have to superpower&quot; title=&quot;&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;coding-gives-us-wings&quot;&gt;Coding gives us wings&lt;/h2&gt;
+
+&lt;p&gt;Programming holds the power to revoutionize our lives and the way we think, interact and make. It not only
+holds intrinsic but is a highly rewarding skills, as you get to write and determine how the current
+and future world works.&lt;/p&gt;
+
+&lt;p&gt;With automation coming in place, there are not going to be as many manual labor jobs, jobs which many people
+have relied on for maybe centuries, but majority of the world isn’t ready for this upcoming time. 
+As a human, it’s my responsibility to enable more people to learn these skills, so they can improve and
+impact the lives of others in a better way.&lt;/p&gt;
+
+&lt;h3 id=&quot;initiatives-and-the-communication-gap&quot;&gt;Initiatives and the communication gap&lt;/h3&gt;
+
+&lt;p&gt;Despite having all amazing global initatives such as &lt;a href=&quot;https://code.org&quot;&gt;Code.org&lt;/a&gt;, 
+&lt;a href=&quot;https://khanacademy.org&quot;&gt;KhanAcademy&lt;/a&gt;
+, and countless others websites offering quality education on CS topics such as &lt;a href=&quot;https://udacity.com&quot;&gt;Udacity&lt;/a&gt; there 
+is still a big gap that’s not being covered, people here are not getting oriented into that CS Learning mindset.&lt;/p&gt;
+
+&lt;p&gt;There’s definitely lack of resources, people are still struggling in developing countries, to fulfill their
+basic needs, but there’s a lack of awareness here too, for people with resources.&lt;/p&gt;
+
+&lt;p&gt;The reason behind this mainly comes to our treatment of Computer Science Education locally, and even though
+initiatives are being started by various groups and some cool indviduals in Pakistan, we
+still need to come together and rethink how much we emphasize the role of technology in our daily lives
+and do more effort to give this superpower to more people.&lt;/p&gt;
+
+&lt;h3 id=&quot;activities-at-the-local-level&quot;&gt;Activities at the local level&lt;/h3&gt;
+
+&lt;p&gt;Improving the state of CS education, requires us to increase our activities at the local level, wherever
+we are cos, this still might be the best way to reach people who otherwise won’t ever think of this, even
+though value of CS Education and Skills is going to be very &lt;strong&gt;apparent&lt;/strong&gt; in the future.&lt;/p&gt;
+
+&lt;p&gt;If you’re a high schooler start a &lt;strong&gt;&lt;a href=&quot;https://hackclub.com&quot;&gt;Hack Club&lt;/a&gt;&lt;/strong&gt; in your high school, 
+HackClub allows the students to participate
+in practical CS learning and project making which is a great activity on it’s own, or to start
+with, you can organize an &lt;strong&gt;&lt;a href=&quot;https://code.org/learn&quot;&gt;Hour of Code&lt;/a&gt;&lt;/strong&gt;. These initiatives not only are a nice 
+community activity, but can also be a way to empower people with resources who can’t afford them.&lt;/p&gt;
+
+&lt;p&gt;The number of organizations supporting such initiatives doesn’t end here, you can&lt;/p&gt;
+
+&lt;h3 id=&quot;encouraging-women-to-code&quot;&gt;Encouraging Women to code&lt;/h3&gt;
+
+&lt;p&gt;Women can play a big role in the future advances in the technology sector, and we should make our efforts,
+keeping this in mind, encouraging them at every level, programs catered especially towards women can play
+a huge role, the state of women in tech and who code in Pakistan, is not quite good as of now, as there a lot of problems that women face in Pakistan, which owe a separate post of it’s own, this can definitely be improved
+if we focus on the number of women we are reaching out to and increase the effort if it’s low. Programs 
+such as &lt;a href=&quot;https://schoolofskills.co/sheskills/&quot;&gt;SheSkills&lt;/a&gt; even though not all coding, are highly encouraging,
+and I would also like to get involved in one such effort in the future.&lt;/p&gt;
+
+&lt;blockquote class=&quot;green&quot;&gt;
+  &lt;p&gt;If you have any feedback, on steps we can take to improve state of CS Education in Pakistan and all over  the world, as well as any questions or concern, do share a comment below, I am very interested to hear from everyone. Thanks a lot for reading this.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote class=&quot;blue&quot;&gt;
+  &lt;p&gt;If you found this helpful, do like and share it, so our voice can reach to more people. :heart:
+&lt;img src=&quot;https://i.imgur.com/wgxtdRy.png&quot; alt=&quot;Instructions to like the post&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
+        <link>https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/27/Code-index/</link>
+        <guid isPermaLink="true">https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/27/Code-index/</guid>
+      </item>
+    
+      <item>
         <title>Setting up Travis CI for Jekyll to build and deploy</title>
         <description>&lt;p class=&quot;center&quot;&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;&lt;img src=&quot;/images/travis-mascot.png&quot; alt=&quot;TravisCI Mascot&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
