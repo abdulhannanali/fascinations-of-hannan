@@ -30,3 +30,11 @@ This blog is generated using the best in town static site generator [Jekyll](htt
 This website is open sourced on Github, check out it's [repository](https://github.com/abdulhannanali/fascinations-of-hannan) for all the raw coolness. **master** branch is what runs in production.
 
 Finally, A big thank you to [John Otander](http://johnotander.com/) to create this beautiful minimalistic theme [Pixyll](https://github.com/johnotander/pixyll) :heart:, I just love it.
+
+#### Creative Commons License
+
+> My work on this site is licensed under [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) **(CC BY 4.0)** wich is Free Culture Approved.
+Disclaimer: The above link redirects you to a human readable summary of (and not a substitute) for 
+the **[license](https://creativecommons.org/licenses/by/4.0/legalcode)**
+
+![CC BY 4.0 License Image](https://licensebuttons.net/l/by/4.0/88x31.png)
