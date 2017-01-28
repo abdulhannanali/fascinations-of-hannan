@@ -63,3 +63,13 @@ small {
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
 }
+
+.post-edit-link {
+  text-align: right;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.post-edit-link a {
+  background-image: none;
+}

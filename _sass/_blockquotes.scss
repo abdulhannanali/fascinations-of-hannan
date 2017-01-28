@@ -5,6 +5,14 @@ blockquote {
   padding: $space-1;
 }
 
+blockquote.green {
+  border-left-color: green;
+}
+
+blockquote.blue {
+  border-left-color: #4267b2;
+}
+
 blockquote footer {
   background-color: #fff;
   border-color: transparent;

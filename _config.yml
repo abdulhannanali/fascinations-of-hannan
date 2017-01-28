@@ -42,6 +42,11 @@ facebook_comments: true
 facebook_appid: 239215849863182
 facebook_comments_number: 10
 
+github:
+  repo_url: https://github.com/abdulhannanali/fascinations-of-hannan
+  branch: master
+  edit_doc: true ## Shows the Edit on Github text for the Post.html template, repo_url and branch are required for this
+
 # Social icons
 github_username: abdulhannanali
 bitbucket_username:
@@ -103,6 +108,7 @@ text:
   thanks: 'Thanks for contacting us. We will reply as soon as possible.'
   og_locale: 'en_US'
 
+env: development
 # Build settings
 markdown:     kramdown
 redcarpet:
