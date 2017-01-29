@@ -18,3 +18,5 @@ fi
 # Create an automated staging environment on one website, where we can select 
 # all the staging environments
 surge --domain "hannan-fascinations-""$TRAVIS_BRANCH"".surge.sh" --project ./_site
+
+node --harmony_async_await ./scripts/purger/index.js
