@@ -52,8 +52,6 @@ in practical CS learning and project making which is a great activity on it's ow
 with, you can organize an **[Hour of Code](https://code.org/learn)**. These initiatives not only are a nice 
 community activity, but can also be a way to empower people with resources who can't afford them.
 
-The number of organizations supporting such initiatives doesn't end here, you can
-
 ### Encouraging Women to code
 
 Women can play a big role in the future advances in the technology sector, and we should make our efforts,
