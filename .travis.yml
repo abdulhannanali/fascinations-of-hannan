@@ -8,9 +8,9 @@ before_install:
     - npm install -g surge
     - npm install -g firebase-tools
 script:
-    - ./scripts/cibuild.sh
+    - source ./scripts/cibuild.sh
 after_success:
-    - ./scripts/deploy.sh
+    - source ./scripts/deploy.sh
 branches:
     except:
         - gh-pages

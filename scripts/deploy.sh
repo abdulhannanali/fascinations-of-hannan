@@ -1,8 +1,7 @@
 #!/bin/bash
 set -ev
 
-# Using node 7.4 here 
-nvm use 7
+node -v
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
     echo "Skipping deploy; just doing a build."
