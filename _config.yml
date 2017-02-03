@@ -120,6 +120,7 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+  - jekyll-admin
   - octopress-minify-html
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor, node_modules]
