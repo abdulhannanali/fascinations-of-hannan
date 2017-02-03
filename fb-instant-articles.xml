@@ -9,7 +9,7 @@
     
         
             <item>
-                <title>Purge cache after Jekyll build using Travis CI</title>
+                <title>Purge cache after Jekyll build using Cloudflare API and TravisCI</title>
                 <link>https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/30/purge/</link>
                 <content:encoded>
                     <![CDATA[
