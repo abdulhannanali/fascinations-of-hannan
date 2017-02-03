@@ -16,7 +16,6 @@ google_tag_manager:
 # Bing services
 bing_verification:
 
-env: development
 # Optional features
 animated:             true
 show_related_posts:   true
@@ -121,7 +120,6 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
-  - jekyll-admin
   - octopress-minify-html
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor, node_modules]
