@@ -9,6 +9,99 @@
     
         
             <item>
+                <title>Purge cache after Jekyll build using Travis CI</title>
+                <link>https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/30/purge/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p class="center lightbox"><a href="https://www.cloudflare.com/img/logo-cloudflare-dark.svg">
+    <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare Logo" width="360px" heigh="240px" />
+</a></p>
+
+<p>I use <a href="https://www.cloudflare.com/cdn/">Cloudflare’s CDN</a> for this site, as it’s very easy to setup and also has a free plan, which is just
+right for my usage, as I want to deliver this site as fast as possible to the users, and it reduces my
+actual bandwidth usage on <a href="https://firebase.com">Firebase</a> which is quite limited on the Free Tier <strong>(10 GB/Month)</strong></p>
+
+<!--Information about my Usecase and how I wanted to solve the problem -->
+<p>A usecase occured where I was publishing major changes to my jekyll blog very frequently, Cloudflare’s CDN
+wasn’t getting revalidated each time, I did a <code class="highlighter-rouge">jekyll build</code> using <code class="highlighter-rouge">TravisCI</code> which was leading to inconsidtent
+user experience as the content previously cached on the CDN wasn’t getting invalidated.</p>
+
+<h2 id="cloudflares-purging-options">Cloudflare’s Purging Options</h2>
+
+<p>Luckily Cloudflare offers, nice options to purge the content from the CDN. Cloudflare offers
+<a href="https://support.cloudflare.com/hc/en-us/articles/200169246-How-do-I-purge-my-cache-">various options</a>
+ in order to purge the cache.</p>
+
+<p>On a free plan, I could’ve either purged the entire cache, or purge individual files by url.</p>
+
+<p>Purging entire cache was never an option, as I not only use this domain for my Blog, but also for Github Pages, Portfolio, and some other random things, I don’t even remember about right now.</p>
+
+<p>After considering the two options, I went for Purging by Individual files, however, doing it all through the UI, every single time, would
+be quite hard for me to do.</p>
+
+<h2 id="cloudflare-api-and-nodejs-client">Cloudflare API and Node.js Client</h2>
+
+<p><a href="https://api.cloudflare.com/">Cloudflare API</a>
+exposes the entire interface of Cloudflare, including Purging. In order to purge files individually, we 
+can pass it an array of file URLs <em>(upto 30 in a request)</em>.</p>
+
+<p>Cloudflare also has an easy to use <a href="https://www.npmjs.com/package/cloudflare">node.js client</a>, which I used to do something cool,
+we are going to talk about next.</p>
+
+<h2 id="writing-a-script-to-purge-using-cloudfares-nodejs-client">Writing a script to purge using Cloudfare’s Node.js client</h2>
+
+<p>Afterwards, I just wrote a simple script that parsed the URLs present in the <code class="highlighter-rouge">sitemap.xml</code> of build folder
+<code class="highlighter-rouge">(_site)</code> using node library <code class="highlighter-rouge">xml2js</code>. Cloudflare had a limit of upto 30 URLs that can be purged in one request <em>(which might be there to protect from misuse)</em> , in order to solve this problem, we returned multiple promisified calls to <code class="highlighter-rouge">Zone.deleteCache</code> of URLs chunked into array at max 30 urls and resolved them all using <code class="highlighter-rouge">Promise.all</code> function.</p>
+
+<p>You can take a look at the scripts I wrote for purging by going to <a href="https://github.com/abdulhannanali/fascinations-of-hannan/tree/master/scripts/purger">scripts/purger</a> directory in this blog’s repository. <a href="https://github.com/abdulhannanali/fascinations-of-hannan/blob/master/scripts/purger/index.js">purger/index.js</a> is the main file initiated to purge the URLs from Cloudflare.</p>
+
+<h3 id="automating-script-purging-task-using-traviscihttpstravis-ciorg">Automating script purging task using <a href="https://travis-ci.org">TravisCI</a></h3>
+
+<p class="lightbox"><a href="https://cdn.travis-ci.org/images/logos/TravisCI-Mascot-1-20feeadb48fc2492ba741d89cb5a5c8a.png">
+    <img src="https://cdn.travis-ci.org/images/logos/TravisCI-Mascot-1-20feeadb48fc2492ba741d89cb5a5c8a.png" width="140px" height="140px" style="float:left; margin: 10px;" />
+</a></p>
+
+<p>Doing a build and deploying it to two environments production and staging, none of these tasks are handled by me, but by <a href="https://travis-ci.org"><strong>Travis the builder</strong></a>. This is quite a mundane task, and will save hours in the long run if properly automated.</p>
+
+<p>After the deploy is succeeded to the <code class="highlighter-rouge">master</code> branch successfully, <code class="highlighter-rouge">scripts/purger/index.js</code> is initiated using this simple command</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>node --harmony_async_await scripts/purger/index.js
+</code></pre>
+</div>
+
+<blockquote>
+  <p><em>Note: <code class="highlighter-rouge">--harmony_async_await</code> flag is only there as <code class="highlighter-rouge">async/await</code> is not a stable feature in Node.js as of <code class="highlighter-rouge">v7.4.0</code>, refrain from using it in server side production code, right now</em></p>
+</blockquote>
+
+<p>This purge task needs to be run only in <code class="highlighter-rouge">master</code>, as I don’t have Cloudflare CDN set up for the domains running in staging environment, such as “surge.sh”, and “Github Pages”, so we run this command after the deploy to firebase succeeds within the <code class="highlighter-rouge">"TRAVIS_BRANCH" == "master"</code> condition in <code class="highlighter-rouge">deploy.sh</code>.</p>
+
+<h4 id="power-of-travisci-and-cloudflare">Power of TravisCI and Cloudflare</h4>
+
+<p>Here’s to show the power of what you can achieve using Cloudflare’s Powerful API and the customization Travis CI provides you in your 
+build environment.</p>
+
+<p>I hope you learned about extent to which you can customize and control your Jekyll build environment, through tools such as <a href="https://travis-ci.org">TravisCI</a> and also discover how easy
+it is to use Cloudflare’s API to do tasks, that might take a lot of time otherwise, if done manually from the Cloudflare’s UI. :heart:</p>
+
+<blockquote class="blue">
+  <p>If you found this post helpful, please give it a Like :thumbsup: . I am looking forward to hear what you have to say on this topic, do post a comment below. :heart: :tada:</p>
+</blockquote>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/programming/people/education/cs/2017/01/30/purge/</guid>
+                <description>
+                    
+                    Purging Cache using Cloudflare after building Jekyll saves me from purging everything, and not buy the tag feature
+                    
+                </description>
+                <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
+                <author>Hannan Ali</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>Improving lives through CS and coding</title>
                 <link>https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/27/Code-index/</link>
                 <content:encoded>

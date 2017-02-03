@@ -7,6 +7,87 @@
     <atom:link href="https://fascinations.hannanali.tech/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Purge cache after Jekyll build using Travis CI</title>
+        <description>&lt;p class=&quot;center lightbox&quot;&gt;&lt;a href=&quot;https://www.cloudflare.com/img/logo-cloudflare-dark.svg&quot;&gt;
+    &lt;img src=&quot;https://www.cloudflare.com/img/logo-cloudflare-dark.svg&quot; alt=&quot;Cloudflare Logo&quot; width=&quot;360px&quot; heigh=&quot;240px&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;https://www.cloudflare.com/cdn/&quot;&gt;Cloudflare’s CDN&lt;/a&gt; for this site, as it’s very easy to setup and also has a free plan, which is just
+right for my usage, as I want to deliver this site as fast as possible to the users, and it reduces my
+actual bandwidth usage on &lt;a href=&quot;https://firebase.com&quot;&gt;Firebase&lt;/a&gt; which is quite limited on the Free Tier &lt;strong&gt;(10 GB/Month)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;!--Information about my Usecase and how I wanted to solve the problem --&gt;
+&lt;p&gt;A usecase occured where I was publishing major changes to my jekyll blog very frequently, Cloudflare’s CDN
+wasn’t getting revalidated each time, I did a &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;TravisCI&lt;/code&gt; which was leading to inconsidtent
+user experience as the content previously cached on the CDN wasn’t getting invalidated.&lt;/p&gt;
+
+&lt;h2 id=&quot;cloudflares-purging-options&quot;&gt;Cloudflare’s Purging Options&lt;/h2&gt;
+
+&lt;p&gt;Luckily Cloudflare offers, nice options to purge the content from the CDN. Cloudflare offers
+&lt;a href=&quot;https://support.cloudflare.com/hc/en-us/articles/200169246-How-do-I-purge-my-cache-&quot;&gt;various options&lt;/a&gt;
+ in order to purge the cache.&lt;/p&gt;
+
+&lt;p&gt;On a free plan, I could’ve either purged the entire cache, or purge individual files by url.&lt;/p&gt;
+
+&lt;p&gt;Purging entire cache was never an option, as I not only use this domain for my Blog, but also for Github Pages, Portfolio, and some other random things, I don’t even remember about right now.&lt;/p&gt;
+
+&lt;p&gt;After considering the two options, I went for Purging by Individual files, however, doing it all through the UI, every single time, would
+be quite hard for me to do.&lt;/p&gt;
+
+&lt;h2 id=&quot;cloudflare-api-and-nodejs-client&quot;&gt;Cloudflare API and Node.js Client&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://api.cloudflare.com/&quot;&gt;Cloudflare API&lt;/a&gt;
+exposes the entire interface of Cloudflare, including Purging. In order to purge files individually, we 
+can pass it an array of file URLs &lt;em&gt;(upto 30 in a request)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Cloudflare also has an easy to use &lt;a href=&quot;https://www.npmjs.com/package/cloudflare&quot;&gt;node.js client&lt;/a&gt;, which I used to do something cool,
+we are going to talk about next.&lt;/p&gt;
+
+&lt;h2 id=&quot;writing-a-script-to-purge-using-cloudfares-nodejs-client&quot;&gt;Writing a script to purge using Cloudfare’s Node.js client&lt;/h2&gt;
+
+&lt;p&gt;Afterwards, I just wrote a simple script that parsed the URLs present in the &lt;code class=&quot;highlighter-rouge&quot;&gt;sitemap.xml&lt;/code&gt; of build folder
+&lt;code class=&quot;highlighter-rouge&quot;&gt;(_site)&lt;/code&gt; using node library &lt;code class=&quot;highlighter-rouge&quot;&gt;xml2js&lt;/code&gt;. Cloudflare had a limit of upto 30 URLs that can be purged in one request &lt;em&gt;(which might be there to protect from misuse)&lt;/em&gt; , in order to solve this problem, we returned multiple promisified calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;Zone.deleteCache&lt;/code&gt; of URLs chunked into array at max 30 urls and resolved them all using &lt;code class=&quot;highlighter-rouge&quot;&gt;Promise.all&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;You can take a look at the scripts I wrote for purging by going to &lt;a href=&quot;https://github.com/abdulhannanali/fascinations-of-hannan/tree/master/scripts/purger&quot;&gt;scripts/purger&lt;/a&gt; directory in this blog’s repository. &lt;a href=&quot;https://github.com/abdulhannanali/fascinations-of-hannan/blob/master/scripts/purger/index.js&quot;&gt;purger/index.js&lt;/a&gt; is the main file initiated to purge the URLs from Cloudflare.&lt;/p&gt;
+
+&lt;h3 id=&quot;automating-script-purging-task-using-traviscihttpstravis-ciorg&quot;&gt;Automating script purging task using &lt;a href=&quot;https://travis-ci.org&quot;&gt;TravisCI&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p class=&quot;lightbox&quot;&gt;&lt;a href=&quot;https://cdn.travis-ci.org/images/logos/TravisCI-Mascot-1-20feeadb48fc2492ba741d89cb5a5c8a.png&quot;&gt;
+    &lt;img src=&quot;https://cdn.travis-ci.org/images/logos/TravisCI-Mascot-1-20feeadb48fc2492ba741d89cb5a5c8a.png&quot; width=&quot;140px&quot; height=&quot;140px&quot; style=&quot;float:left; margin: 10px;&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Doing a build and deploying it to two environments production and staging, none of these tasks are handled by me, but by &lt;a href=&quot;https://travis-ci.org&quot;&gt;&lt;strong&gt;Travis the builder&lt;/strong&gt;&lt;/a&gt;. This is quite a mundane task, and will save hours in the long run if properly automated.&lt;/p&gt;
+
+&lt;p&gt;After the deploy is succeeded to the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch successfully, &lt;code class=&quot;highlighter-rouge&quot;&gt;scripts/purger/index.js&lt;/code&gt; is initiated using this simple command&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;node --harmony_async_await scripts/purger/index.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Note: &lt;code class=&quot;highlighter-rouge&quot;&gt;--harmony_async_await&lt;/code&gt; flag is only there as &lt;code class=&quot;highlighter-rouge&quot;&gt;async/await&lt;/code&gt; is not a stable feature in Node.js as of &lt;code class=&quot;highlighter-rouge&quot;&gt;v7.4.0&lt;/code&gt;, refrain from using it in server side production code, right now&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This purge task needs to be run only in &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, as I don’t have Cloudflare CDN set up for the domains running in staging environment, such as “surge.sh”, and “Github Pages”, so we run this command after the deploy to firebase succeeds within the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;TRAVIS_BRANCH&quot; == &quot;master&quot;&lt;/code&gt; condition in &lt;code class=&quot;highlighter-rouge&quot;&gt;deploy.sh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;power-of-travisci-and-cloudflare&quot;&gt;Power of TravisCI and Cloudflare&lt;/h4&gt;
+
+&lt;p&gt;Here’s to show the power of what you can achieve using Cloudflare’s Powerful API and the customization Travis CI provides you in your 
+build environment.&lt;/p&gt;
+
+&lt;p&gt;I hope you learned about extent to which you can customize and control your Jekyll build environment, through tools such as &lt;a href=&quot;https://travis-ci.org&quot;&gt;TravisCI&lt;/a&gt; and also discover how easy
+it is to use Cloudflare’s API to do tasks, that might take a lot of time otherwise, if done manually from the Cloudflare’s UI. :heart:&lt;/p&gt;
+
+&lt;blockquote class=&quot;blue&quot;&gt;
+  &lt;p&gt;If you found this post helpful, please give it a Like :thumbsup: . I am looking forward to hear what you have to say on this topic, do post a comment below. :heart: :tada:&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
+        <link>https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/30/purge/</link>
+        <guid isPermaLink="true">https://fascinations.hannanali.tech/programming/people/education/cs/2017/01/30/purge/</guid>
+      </item>
+    
+      <item>
         <title>Improving lives through CS and coding</title>
         <description>&lt;p class=&quot;lightbox center&quot;&gt;&lt;a href=&quot;/images/coding.jpg&quot; title=&quot;&quot;&gt;
     &lt;img src=&quot;/images/coding.jpg&quot; alt=&quot;Coding might be the closest thing we have to superpower&quot; title=&quot;&quot; /&gt;
